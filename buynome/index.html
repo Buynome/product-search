@@ -996,6 +996,133 @@ a {
 
 }
     </style>
+
+
+    <!-- Notification banner CSS -->
+<style>
+.fxm-content.banner {
+    display: none;
+    background-color: #ffeaed;
+    padding: 5px;
+    background-size: 64px 64px
+}
+
+.fxm-content .alert {
+    margin: 0 auto;
+    width: 60%
+}
+
+.fxm-content .alert-content {
+    display: inline-block;
+    color: #fff !important;
+    font-size: 15px;
+    font-family: sans-serif;
+    text-align: left;
+    line-height: 24px
+}
+
+.fxm-content .alert-content p {
+    color: #757575;
+    float: left;
+    margin-right: 10px
+}
+
+.fxm-content .alert-content p.headline {
+    margin-left: 10px
+}
+
+.fxm-content .alert-content .content-inner p {
+    margin: 0 0 5px
+}
+
+.fxm-content .alert-content input[type=checkbox] {
+    display: none
+}
+
+.fxm-content .alert-content .lbl-toggle {
+    display: block;
+    font-weight: 700;
+    color: #757575;
+    cursor: pointer;
+    transition: all .25s ease-out;
+    text-decoration: underline;
+    margin-top: 5px;
+    float: right;
+    border: red dashed 1px;
+    text-decoration: none;
+    background: #ffeaed;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all .4s ease 0s
+}
+
+.fxm-content .alert-content .lbl-toggle::after {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #757575;
+    vertical-align: middle;
+    margin-left: .7rem;
+    transform: translateY(-2px);
+    transition: transform .2s ease-out
+}
+
+.fxm-content .alert-content .collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    clear: both;
+    transition: max-height .25s ease-in-out
+}
+
+.fxm-content .alert-content .collapsible-content a {
+    color: #e8e8e8
+}
+
+.fxm-content .alert-content .toggle:checked+.lbl-toggle+.collapsible-content {
+    background-color: #ffffff47;
+    max-height: 350px;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 15px
+}
+
+.fxm-content .alert-content .toggle:checked+.lbl-toggle::after {
+    transform: rotate(90deg) translateX(-3px)
+}
+
+@media (min-width:320px) and (max-width:1024px) {
+    .fxm-content .alert-content .collapsible-content {
+        margin-top: 20px
+    }
+
+    .fxm-content .alert {
+        width: 80%
+    }
+
+    .fxm-content .alert-content .lbl-toggle {
+        float: none;
+        clear: both;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0
+    }
+}
+
+</style>
+<!-- Notification banner CSS -->
+
+<!-- Guideline -->
+<style>
+    .guideline {
+      border-left: 4px solid #eda0a8; /* You can change the color */
+      padding-left: 16px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+<!-- Guideline -->
   </head>
   <body>
     <div class="hero-banner-desktop">
@@ -1261,6 +1388,12 @@ a {
       }
       
       function createProductElement(product) {
+        // Hide the notification banner if it's visible
+    const notificationBanner = document.getElementById('login-alert');
+    if (notificationBanner) {
+        notificationBanner.style.display = 'none';
+    }
+    
           const productWrapper = document.createElement('div');
           productWrapper.className = 'product-wrapper';
           
@@ -1424,6 +1557,24 @@ a {
       }
     </script>
     <!-- share social media js -->
+
+
+    <!-- Notification banner html -->
+<div id="login-alert" class="fxm-content banner" style="display: block;">
+  <div class="alert">
+    <div class="alert-content" data-children-count="1">   
+      <input id="collapsible" class="toggle" type="checkbox">
+      <label for="collapsible" class="lbl-toggle">More information</label>
+      <div class="collapsible-content">
+        <div class="content-inner">
+         <p class="guideline">Thank you for watching my videos! If you're interested in buying a product you saw, just search using its 4-digit Product ID (like 0000 or 0001). Your favorite item will pop up with its price and details. Happy shopping!</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Notification banner html -->
 
   </body>
 </html>
