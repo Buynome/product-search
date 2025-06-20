@@ -437,8 +437,7 @@ body {
   padding: 0px 0px 0px 0px;
   background-color: #eda0a8;
   position: relative;
-  height: 500px !important;
-  min-width: 1439px;
+  height: 500px !important
 }
 
 .text-content {
@@ -862,6 +861,139 @@ a {
   .search-input {
     max-width: 220px;
   }
+}
+    </style>
+    <style>
+      /* Laptop (1024–1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  /* styles for standard laptops */
+  
+.hero-banner-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px 0px 0px;
+  background-color: #eda0a8;
+  position: relative;
+  height: 500px !important;
+  min-width: 1439px;
+}
+
+.text-content {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Poppins;
+  display: none;
+
+}
+
+.text-content h1 {
+  font-size: 46px;
+  color: #00000000;
+  font-weight: 600;
+  margin-top: 0px;
+  display: none;
+}
+
+.text-content p {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #00000000;
+  font-weight: 600;
+  display: none;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  font-size: 21px;
+  margin-bottom: 10px;
+  color: #00000000;
+}
+
+.icon-text svg,
+.icon-text img {
+  margin-right: 10px;
+  fill: black;
+  max-height: 40px
+}
+
+.image-content img {
+  max-width: 500px;
+  height: auto;
+  margin-right: 0;
+
+}
+
+.eyee3 {
+  max-width: 46px !important;
+  border-radius: 8px;
+  margin-right: 11px !important
+}
+
+.header22 {
+  position: absolute;
+  text-align: center;
+  background: transparent;
+  color: white;
+  width: 100%;
+  left: 0;
+  bottom: 0
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+}
+
+/* Animation */
+.parallax>use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+a {
+  text-decoration: none
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 }
     </style>
   </head>
